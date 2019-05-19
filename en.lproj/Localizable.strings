@@ -1,0 +1,312 @@
+/* 
+  Localizable.strings
+  DemoSignup
+
+  Created by Jamil on 5/19/19.
+  Copyright © 2019 Jamil. All rights reserved.
+*/
+/*
+// MARK: - COMMON BUTTON
+"common_button_done" = "完了";
+"common_button_cancel" = "キャンセル";
+"common_button_ok" =  "OK";
+"common_button_yes" = "はい";
+"common_button_no" = "いいえ";
+"common_button_to_correct" = "修正する";
+"common_name" = "氏名";
+"common_textfield_placeholder" = "入力してください";
+"common_change_application" = "変更申請";
+"common_enter_input" = "入力してください";
+"common_enter_correct_input" = "を正しく入力してください";
+
+// MARK: - COMMON PLACEHOLDER
+"common_placeholder_search" = "検索ワードを入力してください";
+"common_seconds_ago" = "秒前";
+"common_minutes_ago" = "分前";
+"common_by_the_time" = "時間前";
+"common_yesterday" = "昨日";
+"common_a_week_ago" = "1週間前";
+"common_year" = "年";
+"common_month" = "月";
+"common_day" = "日";
+"common_house" = "家";
+"common_work" = "仕事";
+"common_day_of_week" = "曜日";
+"common_meal" = "の食事";
+"common_san" = "さん";
+"common_menu" = "(火)のメニュー";
+"common_date_of_menu" = "のあなたの献立";
+
+"common_hour_format" = "hh:mm";
+"common_yesterday_string" = "Yesterday";
+"common_weekday_format" = "E";
+"common_dayInThisYear_format" = "MMM dd";
+"common_dayNotInThisYear_format" = "MMM dd, yyyy";
+"common_female" = "女性";
+"common_male" = "男性";
+"common_student" = "学生";
+"common_worker" = "社会人";
+"common_japanese_meal" = "和食";
+"common_western_meal" = "洋食";
+"common_dinner_meal" = "夕食";
+"common_camera" = "カメラ";
+"common_album" = "アルバム";
+
+// MARK: - LOGIN SCREEN
+"loginview_label_navbar"            = "ログイン";
+"loginview_label_email"             = "メールアドレス";
+"loginview_label_password"          = "パスワード";
+"loginview_label_forgetpassword"   = "パスワードを忘れた方はこちら";
+"loginview_button_login"            = "ログイン";
+"loginview_label_top_register"      = "まだアカウントをお持ちでない方";
+"loginview_button_register"         = "新規登録";
+"loginview_label_term"              = "登録することで、アプリ利用規約に同意したことになります";
+
+// MARK: - SIGNUP SCREEN
+"signupview_label_navbar"                   = "新規登録";
+"signupview_label_email"                    = "メールアドレス";
+"signupview_label_password"                 = "パスワード";
+"signupview_label_contract_code"            = "契約コード";
+"signupview_label_authentication_code"      = "認証コード";
+"signupview_label_contract_code_guide"      = "※新規登録のご案内に記載の\n「契約コード」または「入居者様コード」をご入力ください";
+"signupview_button_register"                = "新規登録";
+"signupview_label_already_account"          = "すでにアカウントをお持ちの方";
+"signupview_popup_label_email_confirmation" = "ご登録のメールアドレスに\n認証メールをお送りしました。\nメールボックスをご確認いただき、\n登録を完了させてください。";
+
+// MARK: - INPUT CODE SCREEN
+"inputcodeview_label_navbar"      = "新規登録";
+"inputcodeview_label_notice"      = " \n に認証コードを送りしました。\n下記に入力し、次へを押してください";
+"inputcodeview_label_sendcode"    = "認証コード";
+"inputcodeview_button_next"       = "次へ";
+"inputcodeview_label_contact"     = "メールが届かない場合はこちら\nからお問合せください";
+
+// MARK: - LOADING SCREEN
+"loadingview_data_loading_label" = "データを連携中…";
+"loadingview_loading_label" = "Loading…";
+
+// MARK: - FORGET PASSWORD SCREEN
+"forgetpasswordview_navbar"             = "パスワード再発行";
+"forgetpasswordview_label_top"          = "ご登録のメールアドレスに\nパスワード再発行のリンクをお送りします。";
+"forgetpasswordview_label_email"        = "メールアドレス";
+"forgetpasswordview_label_confirm_email" = "確認のため\nもう一度入力";
+"forgetpasswordview_button_next"        = "送信";
+"forgetpasswordview_popup_password_changed" = "パスワードを変更しました";
+
+// MARK: - Navbar and Tabbar
+"tabbar_label_timeline" = "ホーム";
+"tabbar_label_chat" = "連絡";
+"tabbar_label_notification" = "お知らせ";
+"tabbar_label_mypage" = "マイページ";
+
+// MARK: - SETTING SCREEN
+"settingview_navbar"                  = "設定";
+"settingview_label_policy"            = "プライバシーポリシー";
+"settingview_label_FAQ"               = "よくある質問";
+"settingview_label_logout"            = "ログアウト";
+"settingview_label_termofuse"         = "利用規約";
+
+// MARK: - INPUT NEW PASSWORD SCREEN
+"inputnewpasswordview_label_request_newpass" = "新しいパスワードを入力してください";
+"inputnewpasswordview_label_newpass"    = "パスワード";
+"inputnewpasswordview_button_next"      = "送信";
+
+// MARK: - COMMON ALERT TITLE
+"alert_warning_title"                   = "Warning";
+"alert_view_setting_label_logout"       = "ログアウトします。\nよろしいですか？";
+"alert_view_setting_label_logout_success"      =    "ログアウトしました";
+"alert_edit_profile_success_title" = "プロフィールを変更しました";
+"alert_profile_registration_label_confirmtitle" = "この内容で登録しますか？";
+"alert_profile_registration_completed" = "登録が完了しました！";
+
+// MARK: - Home Page
+"homeview_navbar_title"                 = "ホーム";
+"homeview_last_update_time"             = "最終更新";
+"home_health_service_title"             = "共立保健サービス";
+"home_mail_order_service_title"         = "共立通販サービス";
+"home_health_service_description"       = "いよいよ初めてのひとり暮らし！学生生活を幅広く補償するのでまさかの時に役立ちます。詳しくはこちら";
+"home_mail_order_service_description"   = "入居日の3日前まで間に合う寝具リース！お部屋までお届けします。詳しくはこちら";
+"home_qrCodeContainer_label_room"       = "Room";
+"home_remaining_text"                   = "残り";
+"home_meal_text"                        = "食";
+"home_order_scheduling_button_text"    = "注文スケジュール";
+
+// MARK: - Home Page Popup
+"home_popup_Success_Message_title"      = "ご注文ありがとうございます！";
+"home_popup_Success_Message_description"= "キャンセルの場合は5日前までに\nキャンセル手続きをお願いいたします。";
+"home_popup_Success_Message_weblink"    = "※お食事のキャンセル方法はこちら";
+"home_popup_success_message_checkin_completed" = "チェックインが完了しました";
+"home_popup_remaining_time" = "残り時間 : ";
+"home_popup_checkin_failure_message" = "エラーが発生しました";
+
+// MARK: - Week days
+"sun" = "日";
+"mon" = "月";
+"tue" = "火";
+"wed" = "水";
+"thu" = "木";
+"fri" = "金";
+"sat" = "土";
+
+// MARK: - Week Item cancel Popup
+"week_item_cancel_order_popup_message_title" = "このページを離れますか？";
+"week_item_cancel_order_popup_message_description" = "入力内容が保存されません。\n本当によろしいですか？";
+"week_item_cancel_order_popup_success_message" = "内容が破棄されました。";
+
+// MARK: - Order cancel Popup
+"order_cancel_popup_message_title" = "注文をキャンセルします。\n本当によろしいですか？";
+"order_cancel_popup_success_message" = "注文をキャンセルしました。";
+
+// MARK: - BreakfastReception-Order(HOME)
+"breakfast_reception_order_selection_top_title" = "和食か洋食を選択してください。";
+"order_cancel_success_message" = "キャンセルされました。";
+
+// MARK: - BreakfastReception-Order-Irregular(HOME)
+"breakfast_reception_irregular_top_title" = "今日の朝食が余っています！";
+
+// MARK: - DinnerReception-Order(HOME)
+"dinner_reception_order_selection_top_title" = "今日の夕食を注文しますか？";
+
+// MARK: - DinnerReception-Order-Irregular(HOME)
+"dinner_reception_irregular_top_title" = "今日の夕食が余っています！";
+
+// MARK: - Meal Time Select
+"meal_time_title" = "今日の夕食を用意しています。\n食事時間を選択してください(任意)。";
+"meal_time_date01" = "18〜19時";
+"meal_time_date02" = "19〜20時";
+"meal_time_date03" = "20〜21時";
+"meal_time_date04" = "21〜22時";
+"meal_time_date05" = "22〜23時";
+"meal_cancel_popup_message_title" = "食事をキャンセルします。\n本当によろしいですか？";
+"meal_time_send_popup_message_title" = "20〜21時で送信します。\nよろしいですか？";
+"meal_send_time_done_message" = "送信ありがとうございます。\nお待ちしております。";
+
+// MARK: - Mypage
+"mypage_photo_registration_title" = "写真登録";
+"mypage_photo_guideline_title" = "ガイドライン";
+"mypage_top_page_title" = "マイページ";
+"mypage_basic_data_title" = "基本データ";
+"mypage_checklist_title" = "入館時に必要なもの";
+"mypage_request_title" = "ご本人について";
+"mypage_add_profile_title" = "追加プロフィール";
+"mypage_contact_top_title" = "入館予定日連絡";
+"mypage_manual_rule_title" = "寮則（利用案内）";
+"mypage_dormitory_policy_rule" = "1.個人情報の収集、利用、提供等\n\n社は、当社における事業サービスの提供及びご案内、お問い合わせに対する回答、アンケートの分析、及び当社採用活動等の利用目的のために適法かつ公正な手段で個人情報を収集し、その目的の達成に必要な範囲内で個人情報を利用します。もし、利用目的の必要な範囲内を超えて利用する必要が生じた場合には、その旨をホームページ等で公表します。\n\n当社が保有する個人情報のうち、ご本人様が各種申込書、届出書等にご記入いただいた項目について、以下の当社のグループ会社及び関連団体と共同利用します。ただし、その場合においても前述の利用目的の達成に必要な範囲内で利用します。\n【共同利用するグループ会社及び関連団体】\n  ・株式会社 共立トラスト\n  ・株式会社 共立保険サービス\n  ・株式会社 共立ファイナンシャルサービス\n  ・株式会社 共立フーズサービス\n  ・株式会社 ビルネット";
+"mypage_staying_certificate_label_navbar" = "在館証明書";
+"mypage_staying_certificate_label_title" = "各種申込に必要な証明書です。";
+"mypage_staying_certificate_label_confirmation" = "取り寄せますか？";
+"mypage_staying_certificate_message_reading_complete" = "読み取りが完了しました。";
+"mypage_contract_type" = "契約タイプ";
+"mypage_monthly_contract" = "月契約";
+"mypage_order_per_meal" = "食事ごとの注文";
+
+// MARK: - LIST ALERT SCREEN
+"listalertview_navbar" = "お知らせ";
+"listalertview_button_all" = "すべて";
+"listalertview_button_unread" = "未読";
+"listalertview_button_read" = "既読";
+"listalertview_label_empty_unread_notice"      = "未読のお知らせはありません";
+"listalertview_label_empty_read_notice"      = "既読のお知らせはありません";
+"listalertview_label_empty" = "お知らせはありません";
+"listalertview_button_check" = "未読をチェックする";
+
+// MARK: - ALERT DETAIL SCREEN
+"alertdetailview_navbar" = "お知らせ詳細";
+
+// MARK: - CHAT TOP
+"chat_top_page_title" = "連絡";
+"chat_overnight_stay_notification" = "外泊届";
+
+// MARK: - CHAT VIEWCONTROLLER
+"chat_title_job" = "就活相談・その他";
+"chat_title_living" = "お家相談";
+"chat_chatTextfield_placeholder" = "メッセージを入力してください";
+"chat_sendButton_text" = "送信";
+"chat_default_job_message" = "あなたに合った最適なお仕事を、専任のキャリアアドバイザーと決めていけるから安心です♪\n転職・就職にお悩みの方、お気軽にご相談ください。\n(営業時間9：00−18：00)";
+"chat_default_living_message" = "設備の故障など万が一のトラブルも安心。\nご質問やご要望の内容に合わせて専門スタッフが丁寧にご対応致します。\nお気軽にお問い合わせください。\n(営業時間9：00−18：00)\n\nよくある質問　もご参考下さい！";
+"chat_default_building_message" = "コメントはありません。貴方がコメントを送ってみよう！";
+"chat_actionSheet_cancelAction" = "キャンセル";
+"chat_actionSheet_cameraAction" = "カメラ";
+"chat_actionSheetPhotoLibraryAction" = "写真ギャラリー";
+"chat_close_or_open_menu" = "メニューを閉じる・開く";
+"chat_go_out_notification" = "外出届を出す";
+"chat_go_out_tap_here" = "外出届けを出したい方は\nこちらをタップ！";
+"chat_please_fill_in_details" = "詳細をご記入ください";
+"chat_choose_date" = "この日程を選択する";
+"chat_return_delayed" = "帰りが遅くなります！";
+
+// MARK: - INTRO VIEWS
+"intro1_title" = "あなたの住まい専用アプリです";
+"intro1_description" = "生活に必要な\n食事の申込み・届出・お知らせの\n受け取りなどが\nDomico１つでできます。";
+
+"intro2_title" = "食事の申込みもDomicoで";
+"intro2_description" = "通知が届くので申込・キャンセル忘れも\n防ぐことができます。";
+
+"intro3_title" = "外泊届もDomicoで";
+"intro3_description" = "外出先からでも届出ができるので便利です。\n帰りが遅くなりそうなときも\nクイック連絡ができます。";
+
+"intro4_title" = "生活に便利なお知らせを\n受け取れます";
+"intro4_description" = "荷物を預かったときに通知が届きます。\nイベントのお知らせなど、生活に役立つ様々な\n情報も受け取ることができます。";
+"intro5_title" = "あなたの生活を\n Domicoが応援！";
+"intro5_description" = "あなたが毎日快適に過ごせるように\n生活をサポートします。";
+"intro_start_button_text" = "はじめる";
+
+// Signup profile
+//step one
+"data_linkage_confirmation" = "データ連携確認";
+"confirm_no_mistake_in_data" = "データに間違いがないかご確認ください。";
+"request_from_modification_application" = "修正は変更申請から修正・依頼をお願いします。";
+"kanji_not_displayed_on_the_system" = "※システム上表示出来ない漢字がございます、ご了承くださいませ";
+"residents_themselves" = "入居者ご本人様";
+
+// Signup profile setup 2
+"enter_additional_items_(required)" = "追加項目の入力（必須）";
+"please_enter_additional_items_(required)" = "追加項目を入力してください（必須）";
+"registration_of_photo_of_entrance_certificate" = "入館証明書の写真登録";
+"phone_number_mobile" = "電話番号(携帯)";
+"nickname" = "ニックネーム";
+"school_name" = "学校名";
+"department" = "学部";
+"department_name" = "所属部署名";
+"subject_name" = "学科名";
+"which_school_you_are_from" = "出身学校名";
+"final" = "（最終）";
+"office_tel_number_placeholder" = "090 - 0000 - 0000";
+"tomio" = "どみお";
+
+// MARK: - PHOTO REGISTRATION SCREEN
+"photo_registration_title" = "入館証明書・プロフィール用\nとして本人の顔写真を登録してください。";
+"photo_registration_add_certificate_title" = "入館証明書";
+"photo_registration_code_title" = "コード";
+"photo_registration_dormitory_name_title" = "寮名";
+"photo_registration_room_number_title" = "部屋番号";
+"photo_registration_kyoritsu" = "株式会社  共立メンテナンス";
+"photo_registration_check_all" = "すべてチェックを入れてください。";
+
+// MARK: - POPUP VIEW
+// Checkin notification
+"popupview_checkin_notification" = "注文の期限が迫っています！";
+
+// MARK: - PLACEHOLDER TEXT
+"ph_name" = "共立　太郎";
+"ph_name_furigana" = "キョウリツ　タロウ";
+"ph_date" = "2002/10/06";
+"ph_gender" = "男性";
+"ph_country" = "日本";
+"ph_university" = "学校名";
+"ph_high_school" = "出身学校名";
+"ph_postal_code" = "101 - 8621";
+"ph_prefecture" = "東京都";
+"ph_street_address" = "千代田区外神田 2 - 18 - 8";
+"ph_property_ID" = "12345";
+"ph_property_name" = "ドーミー高島平";
+"ph_room_no" = "101号室";
+"ph_parents_name" = "共立 花子";
+"ph_parents_name_furigana" = "キョウリツ　ハナコ";
+"ph_telephone_number" = "0120 - 88 - 1030";
+"ph_company_name" = "株式会社 共立";
+"ph_company_department" = "共立部";
+"ph_relationship" = "母";
+"ph_email" = "kyoritsu@kyoritsu.co.jp";
+"ph_password" = "•••••••";
+"ph_code_input" = "1234567890";
+*/

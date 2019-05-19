@@ -12,6 +12,25 @@
 		8D649E69229121E9005AA9F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D649E67229121E9005AA9F9 /* Main.storyboard */; };
 		8D649E6B229121EA005AA9F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D649E6A229121EA005AA9F9 /* Assets.xcassets */; };
 		8D649E6E229121EA005AA9F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D649E6C229121EA005AA9F9 /* LaunchScreen.storyboard */; };
+		8D649E7D22912E9E005AA9F9 /* ServiceMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D649E7822912E9E005AA9F9 /* ServiceMenu.storyboard */; };
+		8D649E7E22912E9E005AA9F9 /* ServiceMenuDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D649E7922912E9E005AA9F9 /* ServiceMenuDateCell.swift */; };
+		8D649E7F22912E9E005AA9F9 /* ServiceMenuDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D649E7A22912E9E005AA9F9 /* ServiceMenuDetailCell.swift */; };
+		8D649E8822912FC2005AA9F9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D649E8122912FC2005AA9F9 /* Constants.swift */; };
+		8D649E8A22912FC2005AA9F9 /* GlobalMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D649E8322912FC2005AA9F9 /* GlobalMethod.swift */; };
+		8D649E91229130C4005AA9F9 /* ExtensionChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D649E90229130C3005AA9F9 /* ExtensionChatView.swift */; };
+		8D649E9322913100005AA9F9 /* ExtensionUIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D649E9222913100005AA9F9 /* ExtensionUIFont.swift */; };
+		8D649EA92291315E005AA9F9 /* hirakakupro-w6.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D649E962291315E005AA9F9 /* hirakakupro-w6.otf */; };
+		8D649EAA2291315E005AA9F9 /* NotoSansCJKjp-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D649E972291315E005AA9F9 /* NotoSansCJKjp-Bold.otf */; };
+		8D649EAB2291315E005AA9F9 /* NotoSansCJKjp-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D649E982291315E005AA9F9 /* NotoSansCJKjp-Medium.otf */; };
+		8D649EAC2291315E005AA9F9 /* NotoSansCJKjp-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D649E992291315E005AA9F9 /* NotoSansCJKjp-Regular.otf */; };
+		8D649EAD2291315E005AA9F9 /* yugothib.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D649E9A2291315E005AA9F9 /* yugothib.ttf */; };
+		8D649EAE2291315E005AA9F9 /* yugothim.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8D649E9B2291315E005AA9F9 /* yugothim.otf */; };
+		8D649EC02291330C005AA9F9 /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D649EB72291330C005AA9F9 /* ExtensionUIView.swift */; };
+		8D649EC22291330C005AA9F9 /* ExtensionUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D649EB92291330C005AA9F9 /* ExtensionUILabel.swift */; };
+		8D649EC42291330C005AA9F9 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D649EBB2291330C005AA9F9 /* ExtensionUIColor.swift */; };
+		8D649EC822913E4F005AA9F9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D649ECA22913E4F005AA9F9 /* Localizable.strings */; };
+		8D649ECD229140A2005AA9F9 /* MenuFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D649ECC229140A2005AA9F9 /* MenuFormViewController.swift */; };
+		8D649ED1229142ED005AA9F9 /* ServiceMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D649ED0229142ED005AA9F9 /* ServiceMenuModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +41,26 @@
 		8D649E6A229121EA005AA9F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D649E6D229121EA005AA9F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D649E6F229121EA005AA9F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D649E7822912E9E005AA9F9 /* ServiceMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ServiceMenu.storyboard; sourceTree = "<group>"; };
+		8D649E7922912E9E005AA9F9 /* ServiceMenuDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceMenuDateCell.swift; sourceTree = "<group>"; };
+		8D649E7A22912E9E005AA9F9 /* ServiceMenuDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceMenuDetailCell.swift; sourceTree = "<group>"; };
+		8D649E8122912FC2005AA9F9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8D649E8322912FC2005AA9F9 /* GlobalMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalMethod.swift; sourceTree = "<group>"; };
+		8D649E90229130C3005AA9F9 /* ExtensionChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionChatView.swift; sourceTree = "<group>"; };
+		8D649E9222913100005AA9F9 /* ExtensionUIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUIFont.swift; sourceTree = "<group>"; };
+		8D649E962291315E005AA9F9 /* hirakakupro-w6.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "hirakakupro-w6.otf"; sourceTree = "<group>"; };
+		8D649E972291315E005AA9F9 /* NotoSansCJKjp-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKjp-Bold.otf"; sourceTree = "<group>"; };
+		8D649E982291315E005AA9F9 /* NotoSansCJKjp-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKjp-Medium.otf"; sourceTree = "<group>"; };
+		8D649E992291315E005AA9F9 /* NotoSansCJKjp-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKjp-Regular.otf"; sourceTree = "<group>"; };
+		8D649E9A2291315E005AA9F9 /* yugothib.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yugothib.ttf; sourceTree = "<group>"; };
+		8D649E9B2291315E005AA9F9 /* yugothim.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yugothim.otf; sourceTree = "<group>"; };
+		8D649EB72291330C005AA9F9 /* ExtensionUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
+		8D649EB92291330C005AA9F9 /* ExtensionUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUILabel.swift; sourceTree = "<group>"; };
+		8D649EBB2291330C005AA9F9 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
+		8D649EC922913E4F005AA9F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8D649ECB22913E6B005AA9F9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8D649ECC229140A2005AA9F9 /* MenuFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuFormViewController.swift; sourceTree = "<group>"; };
+		8D649ED0229142ED005AA9F9 /* ServiceMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMenuModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +93,81 @@
 		8D649E62229121E9005AA9F9 /* DemoSignup */ = {
 			isa = PBXGroup;
 			children = (
+				8D649E8F229130C3005AA9F9 /* UIExtensions */,
+				8D649E8022912FC2005AA9F9 /* Constants */,
+				8D649E7522912E9E005AA9F9 /* ServiceMenu */,
 				8D649E63229121E9005AA9F9 /* AppDelegate.swift */,
 				8D649E65229121E9005AA9F9 /* ViewController.swift */,
 				8D649E67229121E9005AA9F9 /* Main.storyboard */,
+				8D649E942291315E005AA9F9 /* Resources */,
 				8D649E6A229121EA005AA9F9 /* Assets.xcassets */,
 				8D649E6C229121EA005AA9F9 /* LaunchScreen.storyboard */,
 				8D649E6F229121EA005AA9F9 /* Info.plist */,
 			);
 			path = DemoSignup;
+			sourceTree = "<group>";
+		};
+		8D649E7522912E9E005AA9F9 /* ServiceMenu */ = {
+			isa = PBXGroup;
+			children = (
+				8D649ECC229140A2005AA9F9 /* MenuFormViewController.swift */,
+				8D649E7822912E9E005AA9F9 /* ServiceMenu.storyboard */,
+				8D649E7922912E9E005AA9F9 /* ServiceMenuDateCell.swift */,
+				8D649E7A22912E9E005AA9F9 /* ServiceMenuDetailCell.swift */,
+				8D649ED0229142ED005AA9F9 /* ServiceMenuModel.swift */,
+			);
+			path = ServiceMenu;
+			sourceTree = "<group>";
+		};
+		8D649E8022912FC2005AA9F9 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8D649E8122912FC2005AA9F9 /* Constants.swift */,
+				8D649E8322912FC2005AA9F9 /* GlobalMethod.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		8D649E8F229130C3005AA9F9 /* UIExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				8D649E90229130C3005AA9F9 /* ExtensionChatView.swift */,
+				8D649E9222913100005AA9F9 /* ExtensionUIFont.swift */,
+				8D649EBB2291330C005AA9F9 /* ExtensionUIColor.swift */,
+				8D649EB92291330C005AA9F9 /* ExtensionUILabel.swift */,
+				8D649EB72291330C005AA9F9 /* ExtensionUIView.swift */,
+			);
+			path = UIExtensions;
+			sourceTree = "<group>";
+		};
+		8D649E942291315E005AA9F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D649E952291315E005AA9F9 /* Fonts */,
+				8D649E9C2291315E005AA9F9 /* Localizables */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8D649E952291315E005AA9F9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8D649E962291315E005AA9F9 /* hirakakupro-w6.otf */,
+				8D649E972291315E005AA9F9 /* NotoSansCJKjp-Bold.otf */,
+				8D649E982291315E005AA9F9 /* NotoSansCJKjp-Medium.otf */,
+				8D649E992291315E005AA9F9 /* NotoSansCJKjp-Regular.otf */,
+				8D649E9A2291315E005AA9F9 /* yugothib.ttf */,
+				8D649E9B2291315E005AA9F9 /* yugothim.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8D649E9C2291315E005AA9F9 /* Localizables */ = {
+			isa = PBXGroup;
+			children = (
+				8D649ECA22913E4F005AA9F9 /* Localizable.strings */,
+			);
+			path = Localizables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,6 +212,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 8D649E57229121E9005AA9F9;
 			productRefGroup = 8D649E61229121E9005AA9F9 /* Products */;
@@ -123,8 +230,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D649E6E229121EA005AA9F9 /* LaunchScreen.storyboard in Resources */,
+				8D649EAB2291315E005AA9F9 /* NotoSansCJKjp-Medium.otf in Resources */,
 				8D649E6B229121EA005AA9F9 /* Assets.xcassets in Resources */,
+				8D649EAA2291315E005AA9F9 /* NotoSansCJKjp-Bold.otf in Resources */,
 				8D649E69229121E9005AA9F9 /* Main.storyboard in Resources */,
+				8D649EAD2291315E005AA9F9 /* yugothib.ttf in Resources */,
+				8D649EA92291315E005AA9F9 /* hirakakupro-w6.otf in Resources */,
+				8D649EAE2291315E005AA9F9 /* yugothim.otf in Resources */,
+				8D649EC822913E4F005AA9F9 /* Localizable.strings in Resources */,
+				8D649EAC2291315E005AA9F9 /* NotoSansCJKjp-Regular.otf in Resources */,
+				8D649E7D22912E9E005AA9F9 /* ServiceMenu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +251,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D649E66229121E9005AA9F9 /* ViewController.swift in Sources */,
+				8D649ED1229142ED005AA9F9 /* ServiceMenuModel.swift in Sources */,
 				8D649E64229121E9005AA9F9 /* AppDelegate.swift in Sources */,
+				8D649EC02291330C005AA9F9 /* ExtensionUIView.swift in Sources */,
+				8D649EC42291330C005AA9F9 /* ExtensionUIColor.swift in Sources */,
+				8D649EC22291330C005AA9F9 /* ExtensionUILabel.swift in Sources */,
+				8D649E7E22912E9E005AA9F9 /* ServiceMenuDateCell.swift in Sources */,
+				8D649E9322913100005AA9F9 /* ExtensionUIFont.swift in Sources */,
+				8D649E8822912FC2005AA9F9 /* Constants.swift in Sources */,
+				8D649E91229130C4005AA9F9 /* ExtensionChatView.swift in Sources */,
+				8D649E8A22912FC2005AA9F9 /* GlobalMethod.swift in Sources */,
+				8D649E7F22912E9E005AA9F9 /* ServiceMenuDetailCell.swift in Sources */,
+				8D649ECD229140A2005AA9F9 /* MenuFormViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +283,15 @@
 				8D649E6D229121EA005AA9F9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8D649ECA22913E4F005AA9F9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D649EC922913E4F005AA9F9 /* en */,
+				8D649ECB22913E6B005AA9F9 /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -8,27 +8,6 @@
 
 import UIKit
 
-enum serviceMenuEnum:Int
-{
-    //section 0 row count 3
-    case from_date = 0
-    case to_date
-    case stay_day_count
-    
-    //section 1 row  count 5
-    case stay_home_name
-    case relationship
-    case address
-    case phone_number
-    case remarks
-    
-    static let count: Int = {
-        var max: Int = 0
-        while let _ = serviceMenuEnum(rawValue: max) { max += 1 }
-        return max
-    }()
-}
-
 class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var titleImageView: UIImageView!
@@ -37,7 +16,6 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var listTableView: UITableView!
-    var currentTextField: UITextField!
     let model = ServiceMenuModel.shared
     
     override func viewDidLoad() {
@@ -293,9 +271,6 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
     @objc func submitButtonPressed(){
         print("submitButtonPressed")
         
-        let model = ServiceMenuModel.shared
-        print("\n propertyNames:\(model.property())")
-        
         print("\n param:\(model.getParam())")
         
     }
@@ -310,7 +285,6 @@ extension MenuFormViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        currentTextField = textField
         return true;
     }
     
@@ -329,17 +303,11 @@ extension MenuFormViewController: UITextFieldDelegate {
         return false
     }
     
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        self.getTextFieldsInformation(textField)
-    }
+//    @objc func textFieldDidChange(_ textField: UITextField) {
+//        self.getTextFieldsInformation(textField)
+//    }
     
     func getTextFieldsInformation( _ textField: UITextField) {
-        //set value of the textfiled
-//        let keys   = Array(model.property().keys)
-//        let selectedKey = keys[textField.tag]
-//        let selectedValue = model.property()[selectedKey]
-//        print("textField:\(textField.tag)")
-        
         switch textField.tag {
         case 2:
             model.stay_day_count = NSNumber(value: Int(textField.text ?? "") ?? 0)

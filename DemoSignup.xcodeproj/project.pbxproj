@@ -12,7 +12,6 @@
 		8D649E69229121E9005AA9F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D649E67229121E9005AA9F9 /* Main.storyboard */; };
 		8D649E6B229121EA005AA9F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D649E6A229121EA005AA9F9 /* Assets.xcassets */; };
 		8D649E6E229121EA005AA9F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D649E6C229121EA005AA9F9 /* LaunchScreen.storyboard */; };
-		8D649E7D22912E9E005AA9F9 /* ServiceMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D649E7822912E9E005AA9F9 /* ServiceMenu.storyboard */; };
 		8D649E7E22912E9E005AA9F9 /* ServiceMenuDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D649E7922912E9E005AA9F9 /* ServiceMenuDateCell.swift */; };
 		8D649E7F22912E9E005AA9F9 /* ServiceMenuDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D649E7A22912E9E005AA9F9 /* ServiceMenuDetailCell.swift */; };
 		8D649E8822912FC2005AA9F9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D649E8122912FC2005AA9F9 /* Constants.swift */; };
@@ -31,6 +30,7 @@
 		8D649EC822913E4F005AA9F9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D649ECA22913E4F005AA9F9 /* Localizable.strings */; };
 		8D649ECD229140A2005AA9F9 /* MenuFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D649ECC229140A2005AA9F9 /* MenuFormViewController.swift */; };
 		8D649ED1229142ED005AA9F9 /* ServiceMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D649ED0229142ED005AA9F9 /* ServiceMenuModel.swift */; };
+		8DA420EA2296ADA0005C1DB2 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA420E92296ADA0005C1DB2 /* HeaderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +41,6 @@
 		8D649E6A229121EA005AA9F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D649E6D229121EA005AA9F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D649E6F229121EA005AA9F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D649E7822912E9E005AA9F9 /* ServiceMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ServiceMenu.storyboard; sourceTree = "<group>"; };
 		8D649E7922912E9E005AA9F9 /* ServiceMenuDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceMenuDateCell.swift; sourceTree = "<group>"; };
 		8D649E7A22912E9E005AA9F9 /* ServiceMenuDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceMenuDetailCell.swift; sourceTree = "<group>"; };
 		8D649E8122912FC2005AA9F9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		8D649ECB22913E6B005AA9F9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8D649ECC229140A2005AA9F9 /* MenuFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuFormViewController.swift; sourceTree = "<group>"; };
 		8D649ED0229142ED005AA9F9 /* ServiceMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMenuModel.swift; sourceTree = "<group>"; };
+		8DA420E92296ADA0005C1DB2 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				8D649ECC229140A2005AA9F9 /* MenuFormViewController.swift */,
-				8D649E7822912E9E005AA9F9 /* ServiceMenu.storyboard */,
 				8D649E7922912E9E005AA9F9 /* ServiceMenuDateCell.swift */,
+				8DA420E92296ADA0005C1DB2 /* HeaderCell.swift */,
 				8D649E7A22912E9E005AA9F9 /* ServiceMenuDetailCell.swift */,
 				8D649ED0229142ED005AA9F9 /* ServiceMenuModel.swift */,
 			);
@@ -239,7 +239,6 @@
 				8D649EAE2291315E005AA9F9 /* yugothim.otf in Resources */,
 				8D649EC822913E4F005AA9F9 /* Localizable.strings in Resources */,
 				8D649EAC2291315E005AA9F9 /* NotoSansCJKjp-Regular.otf in Resources */,
-				8D649E7D22912E9E005AA9F9 /* ServiceMenu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +255,7 @@
 				8D649EC02291330C005AA9F9 /* ExtensionUIView.swift in Sources */,
 				8D649EC42291330C005AA9F9 /* ExtensionUIColor.swift in Sources */,
 				8D649EC22291330C005AA9F9 /* ExtensionUILabel.swift in Sources */,
+				8DA420EA2296ADA0005C1DB2 /* HeaderCell.swift in Sources */,
 				8D649E7E22912E9E005AA9F9 /* ServiceMenuDateCell.swift in Sources */,
 				8D649E9322913100005AA9F9 /* ExtensionUIFont.swift in Sources */,
 				8D649E8822912FC2005AA9F9 /* Constants.swift in Sources */,

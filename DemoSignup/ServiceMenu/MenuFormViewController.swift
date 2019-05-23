@@ -106,21 +106,21 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
     
     //MARK:- Table Data Surce
     //section one period data
-    func getPeriodData()->[Any]{
+    func getSection0Data()->[Any]{
         return [
-            
+            ["Header Title"],//header row
             ["外出日", "帰寮日","0"],
             //"outing_day" = "外出日"; "homestay_day" = "帰寮日";
             ["宿泊日数",  "一泊二日","2"],
             //"stay_days" = "宿泊日数";"overnight_stay" = "一泊二日";
-            
         ]
     }
     
     //section two detail data
-    func getDetailData()->[Any]{
+    func getSection1Data()->[Any]{
         return [
             //section two
+            ["Header Title"],//header row
             ["外泊先  (必須)","実家","3"],
             //["外泊先  (必須)","実家"],
             ["続柄","父","4"],
@@ -139,6 +139,26 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
         //["period" = "期間","外泊先(連絡先)"],
         return titleArray
     }
+    
+    // all section data
+    func getTableData()->[Any]{
+        return [
+            self.getSection0Data(),
+            self.getSection1Data(),
+        ]
+    }
+    
+    func getHeaderHeight(section:Int) -> CGFloat{
+        var height:CGFloat = 0.0
+        
+        switch section {
+        case 1:
+            height = 80.scale()
+        default:
+            height = 60
+        }
+        return height
+    }
 
     //MARK: - Table View
     func numberOfSections(in tableView: UITableView) -> Int
@@ -147,73 +167,51 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-        var height : CGFloat = 58.scale()
-        if indexPath.section == 1{
-            if indexPath.row == 2 || indexPath.row == 4 {
+        var height : CGFloat = 56.scale()
+        if indexPath.row == 0{//section header height
+            height = self.getHeaderHeight(section: indexPath.section)
+        }else if indexPath.section == 1{
+            if indexPath.row == 3 || indexPath.row == 5 {
                 height = 86.scale()
             }
-            
+        }
+        
+        //add seperator height
+        if indexPath.row > 1{//add seperator for
+            height = height + 2.scale()// seperator height
         }
         return height;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        var row = 0
-        switch section{
-        case 0:
-            row = 2
-        case 1:
-            row = 5
-            
-        default:
-            break
-        }
-        return row
+        let rowArray = self.getTableData()[section] as AnyObject
+        return rowArray.count
     }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 1{
-            return 80.scale()
-        }
-        return 60.scale()
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
-        let headerView = UIView()
-        headerView.frame = CGRect(x: 0, y: 0, width:SIZE_WIDTH , height: section == 0 ? 60.scale():80.scale())
-        headerView.backgroundColor = UIColor.init(rgbValue: 242)
-        
-        //
-        var mframe = headerView.frame
-        mframe.origin.x    = 16
-        mframe.size.width = mframe.size.width - 2*mframe.origin.x
-        
-        mframe.size.height = 20
-        mframe.origin.y    = headerView.frame.size.height - mframe.size.height - 10
-        
-        
-        let textLabel : UILabel = UILabel.getLabel()
-        textLabel.frame = mframe
-        textLabel.font = UIFont.NotoSansCJKJPRegularFont(ofSize: 14.scale())
-        textLabel.backgroundColor = .clear //UIColor.init(rgbValue: 68)
-        textLabel.text = self.getHeaderTitleData()[section] as? String ?? ""
-        textLabel.textColor = UIColor.init(rgbValue: 68)
-        
-        headerView.addSubview(textLabel)
-        return headerView
-    }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.section == 0 &&  indexPath.row == 0{
+        //set first row for  each header  as a section header
+        if indexPath.row == 0 {
+            guard let cell: HeaderCell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as? HeaderCell  else {
+                fatalError("The dequeued cell is not an instance of HeaderCell.")
+            }
+            
+            //title frame
+            var mframe = cell.titleLabel.frame
+            mframe.origin.y    =  self.getHeaderHeight(section: indexPath.section) - mframe.size.height - 10
+            cell.titleLabel.frame = mframe
+            cell.titleLabel.text = self.getHeaderTitleData()[indexPath.section] as? String ?? ""
+            
+            return cell
+            
+        }else if indexPath.section == 0 &&  indexPath.row == 1{
             
                 guard let cell:ServiceMenuDateCell = tableView.dequeueReusableCell(withIdentifier: "ServiceMenuDateCell", for: indexPath) as? ServiceMenuDateCell  else {
                     fatalError("The dequeued cell is not an instance of ServiceMenuDateCell.")
                 }
             
-                cell.cellSeperator.isHidden = indexPath.row == 0 ? true:false
+                cell.cellSeperator.isHidden = indexPath.row == 1 ? true:false
             
-                let titleList:[String] = self.getPeriodData()[indexPath.row] as! [String]
+                let titleList:[String] = self.getSection0Data()[indexPath.row] as! [String]
                 cell.titleButtonLeft.setTitle(titleList[0], for: .normal)
                 cell.dateButtonLeft.setTitle("august9", for: .normal)
                 cell.titleButtonRight.setTitle(titleList[1], for: .normal)
@@ -225,18 +223,22 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
             guard let cell:ServiceMenuDetailCell = tableView.dequeueReusableCell(withIdentifier: "ServiceMenuDetailCell", for: indexPath) as? ServiceMenuDetailCell  else {
                 fatalError("The dequeued cell is not an instance of ServiceMenuDetailCell.")
             }
+
+            let sectionData = self.getTableData()[indexPath.section] as! [[String]]
+            let rowData     = sectionData[indexPath.row]
             
-            var titleList:[String] =  self.getDetailData()[indexPath.row] as! [String]
-            if indexPath.section == 0{
-                 titleList =  self.getPeriodData()[indexPath.row] as! [String]
-            }
+//            print("\n")
+//            for str in rowData as [AnyObject] {
+//                print("[\(indexPath.section)][\(indexPath.row)]:\(str)")
+//            }
             
-            let tag =  Int(titleList[2]) ?? 0
+            
+            let tag =  Int(rowData[2]) ?? 0
             cell.textField.delegate = self
-            cell.titleLabel.text =  titleList[0]
+            cell.titleLabel.text =  rowData[0]
             
             cell.textField.tag =  tag
-            cell.textField.placeholder = titleList[1]
+            cell.textField.placeholder = rowData[1]
             
             //set value of the textfiled
             cell.textField.text = self.getTextfieldValueFor(tag: tag) ?? ""
@@ -288,7 +290,7 @@ extension MenuFormViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return true;
     }
-    
+
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return true
     }
@@ -303,10 +305,6 @@ extension MenuFormViewController: UITextFieldDelegate {
         
         return false
     }
-    
-//    @objc func textFieldDidChange(_ textField: UITextField) {
-//        self.getTextFieldsInformation(textField)
-//    }
     
     func getTextFieldsInformation( _ textField: UITextField) {
         switch textField.tag {

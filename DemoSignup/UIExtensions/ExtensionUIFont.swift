@@ -18,7 +18,7 @@ extension UIFont {
     }
     
     class func NotoSansCJKJPRegularFont(ofSize: CGFloat) -> UIFont {
-        return UIFont(name: "NotoSansCJKjp-Regular", size: ofSize)!
+        return UIFont.systemFont(ofSize:10.0) //UIFont(name: "NotoSansCJKjp-Regular", size: ofSize)!
     }
     class func YuGoBoldFont(ofSize: CGFloat) -> UIFont {
         return UIFont(name: "YuGothic-Bold", size: ofSize)!

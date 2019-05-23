@@ -48,7 +48,7 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
         //add detail label
         let detailLabel = UILabel.getLabel()
         detailLabel.frame = CGRect(x: 0, y: 34.scale(), width: SIZE_WIDTH.scale(), height: 24.scale())
-        detailLabel.text = "please_enter_details".localize()
+        detailLabel.text = "詳細をご入力ください "
         detailLabel.textAlignment = .center
         detailLabel.backgroundColor = .clear
         //set text color
@@ -62,7 +62,7 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
         mframe.origin.y = y
         let itemLabel = UILabel.getLabel()
         itemLabel.frame = mframe
-        itemLabel.text = "overnight_accommodation_required_item".localize()
+        itemLabel.text = "※外泊先は必須項目です"
         itemLabel.textAlignment = .center
         itemLabel.alpha = 0.6
         itemLabel.backgroundColor = .clear //UIColor.init(rgbValue: 68) //don't scale
@@ -80,7 +80,7 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
         //add button on footer view
         let submitButton = UIButton()
         submitButton.frame = CGRect(x: 0, y: 0, width: 310.scale(), height: 45.scale())
-        submitButton.setTitle("submit".localize(), for: .normal)
+        submitButton.setTitle("submit", for: .normal)
         submitButton.titleLabel?.font = UIFont.HiraKakuProNW6RegularFont(ofSize: 16.scale())
         submitButton.setTitleColor(UIColor.white, for: .normal)
         submitButton.backgroundColor = UIColor.init(rgbValue: 68)
@@ -109,9 +109,9 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
     func getPeriodData()->[Any]{
         return [
             
-            ["outing_day".localize(), "homestay_day".localize(),"0"],
+            ["外出日", "帰寮日","0"],
             //"outing_day" = "外出日"; "homestay_day" = "帰寮日";
-            ["stay_days".localize(),  "overnight_stay".localize(),"2"],
+            ["宿泊日数",  "一泊二日","2"],
             //"stay_days" = "宿泊日数";"overnight_stay" = "一泊二日";
             
         ]
@@ -121,21 +121,22 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
     func getDetailData()->[Any]{
         return [
             //section two
-            ["extra_night_accommodation_mandatory".localize(),"home".localize(),"3"],
+            ["外泊先  (必須)","実家","3"],
             //["外泊先  (必須)","実家"],
-            ["relation".localize(),"father".localize(),"4"],
+            ["続柄","父","4"],
             //["続柄","父"],
-            ["street_address".localize(),"chiyoda_address".localize(),"5"],
+            ["住所","千代田区外神田 2 - 18 - 8","5"],
             // ["住所","千代田区外神田 2 - 18 - 8"],
-            ["outside_night_phone_number".localize(),"sample_phone_number".localize(),"6"],
+            ["外泊先電話番号","090 - 0000 - 0000","6"],
             //["外泊先電話番号","090 - 0000 - 0000"],
-            ["remarks".localize(),"remarks_value".localize(),"7"],
+            ["備考","お盆のため、実家に帰省します！","7"],
             //["備考","お盆のため、実家に帰省します！"],
         ]
     }
     
     func getHeaderTitleData()->[Any]{
-        let titleArray = ["period".localize(),"outside_hotel_contact_details".localize()]
+        let titleArray = ["期間","外泊先(連絡先)"]
+        //["period" = "期間","外泊先(連絡先)"],
         return titleArray
     }
 
@@ -214,9 +215,9 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
             
                 let titleList:[String] = self.getPeriodData()[indexPath.row] as! [String]
                 cell.titleButtonLeft.setTitle(titleList[0], for: .normal)
-                cell.dateButtonLeft.setTitle("august9".localize(), for: .normal)
+                cell.dateButtonLeft.setTitle("august9", for: .normal)
                 cell.titleButtonRight.setTitle(titleList[1], for: .normal)
-                cell.dateButtonRight.setTitle("august11".localize(), for: .normal)
+                cell.dateButtonRight.setTitle("august11", for: .normal)
             
                 return cell
             

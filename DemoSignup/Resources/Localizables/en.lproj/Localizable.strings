@@ -1,0 +1,66 @@
+//
+//  ViewController.swift
+//  DemoSignup
+//
+//  Created by Jamil on 5/19/19.
+//  Copyright © 2019 Jamil. All rights reserved.
+//
+//MARK: - Chat
+"overnight_stay_Notification" = "外泊届";
+"Please_fill_in_details" = "詳細をご記入ください";
+
+//MARK: - Service Menu before home
+"period" = "期間";
+"need_meal" = "食事の要·不要";
+"outside_hotel_contact_details" = "外泊先(連絡先)";
+"outing_day" = "外出日";
+"homestay_day" = "帰寮日";
+"stay_days" = "宿泊日数";
+"overnight_stay" = "一泊二日";
+"sleeping_overnight" = "外泊先";
+"home" = "実家";
+"outside_night_phone_number" = "外泊先電話番号";
+"remarks" = "備考";
+"remarks_value" = "お盆のため、実家に帰省します！もし\n何かあったらまた連絡します！！";
+
+"outside_hotel_contact_details" = "外泊先(連絡先)";
+"extra_night_accommodation_mandatory" = "外泊先  (必須)";
+"home" = "実家";
+
+//MARK: - Service Menu before home
+"need_meal" = "食事の要·不要";
+"outside_hotel_contact_details" = "外泊先(連絡先)";
+"sleeping_overnight" = "外泊先";
+"please_enter_the_overtime_period" = "外泊期間をご入力ください。";
+
+//MARK: - Service Menu after home
+"please_enter_details" = "詳細をご入力ください ";
+"overnight_accommodation_required_item" = "※外泊先は必須項目です";
+"outside_hotel_contact_details" = "外泊先(連絡先)";
+"period" = "期間";
+"outing_day" = "外出日";
+"homestay_day" = "帰寮日";
+"stay_days" = "宿泊日数";
+"overnight_stay" = "一泊二日";
+"august9" = "8月9日";
+"august11" = "8月11日";
+"extra_night_accommodation_mandatory" = "外泊先  (必須)";
+"home" = "実家";
+"relation" = "続柄";
+"father" = "父";
+"street_address" = "住所";
+"chiyoda_address" = "千代田区外神田 2 - 18 - 8";
+"outside_night_phone_number" = "外泊先電話番号";
+"sample_phone_number" = "090 - 0000 - 0000";
+"remarks" = "備考";
+"remarks_value" = "お盆のため、実家に帰省します！もし\n何かあったらまた連絡します！！";
+"submit" = "申請する";
+
+//MARK: - Overnight stay order
+"overnight_delivery_application_completed" = "外泊届けの申請が完了しました。";
+"meals_during_overnight_delivery_period" = "外泊届け期間中の食事は\nどうされますか？";
+"if_you_go_out_and_have_a_meal_setting" = "※食事をとってから外泊の方は\n注文設定をしてください";
+"sample_date" = "2018/08/09 - 2018/08/11";
+"setup_order" = "注文設定する";
+"cancel_all" = "全てキャンセル";
+

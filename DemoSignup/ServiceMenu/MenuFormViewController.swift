@@ -16,7 +16,7 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var listTableView: UITableView!
-    let model = ServiceMenuModel.shared
+    let model = ServiceMenuModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,27 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapOutsideTextView))
         listTableView.addGestureRecognizer(tap)
+        
+        /*
+        //demo
+        //UI
+        model.from_date      = "29/05/2019"
+        model.to_date        = "30/05/2019"
+        model.stay_day_count = "2"
+        model.stay_home_name = "Mother's Home"
+        model.relationship   = "Mother"
+        model.address        = "Kurigram"
+        model.phone_number   = "0123546789"
+        model.remarks        = "I will stay there in Eid vacation"
+        
+        //demo
+        model.value8  = "value08"
+        model.value9  = "value09"
+        model.value10 = "value10"
+        model.value11 = "value11"
+        model.value12 = "value12"
+        */
+        
     }
     
     //MARK: - Configure View
@@ -104,72 +125,68 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
         self.dismiss(animated: true, completion: nil)
     }
     
-    //MARK:- Table Data Surce
-    //section one period data
-    func getSection0Data()->[Any]{
-        return [
-            ["Header Title"],//header row
-            ["外出日", "帰寮日","0"],
-            //"outing_day" = "外出日"; "homestay_day" = "帰寮日";
-            ["宿泊日数",  "一泊二日","2"],
-            //"stay_days" = "宿泊日数";"overnight_stay" = "一泊二日";
-        ]
-    }
-    
-    //section two detail data
-    func getSection1Data()->[Any]{
-        return [
-            //section two
-            ["Header Title"],//header row
-            ["外泊先  (必須)","実家","3"],
-            //["外泊先  (必須)","実家"],
-            ["続柄","父","4"],
-            //["続柄","父"],
-            ["住所","千代田区外神田 2 - 18 - 8","5"],
-            // ["住所","千代田区外神田 2 - 18 - 8"],
-            ["外泊先電話番号","090 - 0000 - 0000","6"],
-            //["外泊先電話番号","090 - 0000 - 0000"],
-            ["備考","お盆のため、実家に帰省します！","7"],
-            //["備考","お盆のため、実家に帰省します！"],
-        ]
-    }
-    
-    func getHeaderTitleData()->[Any]{
-        let titleArray = ["期間","外泊先(連絡先)"]
-        //["period" = "期間","外泊先(連絡先)"],
-        return titleArray
-    }
-    
-    // all section data
-    func getTableData()->[Any]{
-        return [
-            self.getSection0Data(),
-            self.getSection1Data(),
-        ]
-    }
-    
-    func getHeaderHeight(section:Int) -> CGFloat{
-        var height:CGFloat = 0.0
-        
-        switch section {
-        case 1:
-            height = 80.scale()
-        default:
-            height = 60
-        }
-        return height
-    }
+//    //MARK:- Table Data Surce Private method
+//    //section first period data
+//    func getSection0Data()->[Any]{
+//        return [
+//            ["期間","80"],//header row
+//            ["外出日", "帰寮日","0"],
+//            //"outing_day" = "外出日"; "homestay_day" = "帰寮日";
+//            ["宿泊日数",  "一泊二日","2"],
+//            //"stay_days" = "宿泊日数";"overnight_stay" = "一泊二日";
+//        ]
+//    }
+//    
+//    //section second detail data
+//    func getSection1Data()->[Any]{
+//        return [
+//            ["外泊先(連絡先)","80"],//header row
+//            ["外泊先  (必須)","実家","3"],
+//            //["外泊先  (必須)","実家"],
+//            ["続柄","父","4"],
+//            //["続柄","父"],
+//            ["住所","千代田区外神田 2 - 18 - 8","5"],
+//            // ["住所","千代田区外神田 2 - 18 - 8"],
+//            ["外泊先電話番号","090 - 0000 - 0000","6"],
+//            //["外泊先電話番号","090 - 0000 - 0000"],
+//            ["備考","お盆のため、実家に帰省します！","7"],
+//            //["備考","お盆のため、実家に帰省します！"],
+//            
+//            //duplicate data
+//            ["Value 8","実家","8"],
+//            ["Value 9","父","9"],
+//            ["Value 10","千代田区外神田 2 - 18 - 8","10"],
+//            ["Value 11","090 - 0000 - 0000","11"],
+//            ["Value 12","お盆のため、実家に帰省します！","12"],
+//        ]
+//    }
+//    
+//    // all section data
+//    func getTableData()->[Any]{
+//        return [
+//            self.getSection0Data(),
+//            self.getSection1Data(),
+//        ]
+//    }
+//    
+//    func getHeaderHeight(section:Int) -> CGFloat{
+//        let sectionData = getTableData()[section] as! [[String]]
+//        let rowData     = sectionData[0]
+//        let height      = Double(rowData[1]) ?? 0
+//        return CGFloat(height)
+//    }
 
     //MARK: - Table View
     func numberOfSections(in tableView: UITableView) -> Int
     {
-        return  self.getHeaderTitleData().count
+        //return  self.getHeaderTitleData().count
+        return model.getTableData().count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         var height : CGFloat = 56.scale()
         if indexPath.row == 0{//section header height
-            height = self.getHeaderHeight(section: indexPath.section)
+            height = model.getHeaderHeight(section: indexPath.section)
         }else if indexPath.section == 1{
             if indexPath.row == 3 || indexPath.row == 5 {
                 height = 86.scale()
@@ -184,11 +201,15 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        let rowArray = self.getTableData()[section] as AnyObject
+        let rowArray = model.getTableData()[section] as AnyObject
         return rowArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let sectionData = model.getTableData()[indexPath.section] as! [[String]]
+        let rowData     = sectionData[indexPath.row]
+        
         //set first row for  each header  as a section header
         if indexPath.row == 0 {
             guard let cell: HeaderCell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as? HeaderCell  else {
@@ -197,9 +218,9 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
             
             //title frame
             var mframe = cell.titleLabel.frame
-            mframe.origin.y    =  self.getHeaderHeight(section: indexPath.section) - mframe.size.height - 10
+            mframe.origin.y    =  model.getHeaderHeight(section: indexPath.section) - mframe.size.height - 10
             cell.titleLabel.frame = mframe
-            cell.titleLabel.text = self.getHeaderTitleData()[indexPath.section] as? String ?? ""
+            cell.titleLabel.text   = rowData[0]
             
             return cell
             
@@ -211,7 +232,7 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
             
                 cell.cellSeperator.isHidden = indexPath.row == 1 ? true:false
             
-                let titleList:[String] = self.getSection0Data()[indexPath.row] as! [String]
+                let titleList:[String] = model.getSection0Data()[indexPath.row] as! [String]
                 cell.titleButtonLeft.setTitle(titleList[0], for: .normal)
                 cell.dateButtonLeft.setTitle("august9", for: .normal)
                 cell.titleButtonRight.setTitle(titleList[1], for: .normal)
@@ -224,24 +245,17 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
                 fatalError("The dequeued cell is not an instance of ServiceMenuDetailCell.")
             }
 
-            let sectionData = self.getTableData()[indexPath.section] as! [[String]]
+            let sectionData = model.getTableData()[indexPath.section] as! [[String]]
             let rowData     = sectionData[indexPath.row]
             
-//            print("\n")
-//            for str in rowData as [AnyObject] {
-//                print("[\(indexPath.section)][\(indexPath.row)]:\(str)")
-//            }
-            
-            
             let tag =  Int(rowData[2]) ?? 0
-            cell.textField.delegate = self
-            cell.titleLabel.text =  rowData[0]
-            
-            cell.textField.tag =  tag
+            cell.titleLabel.text    =  rowData[0]
+            cell.textField.tag       =  tag
+            cell.textField.delegate   = self
             cell.textField.placeholder = rowData[1]
             
-            //set value of the textfiled
-            cell.textField.text = self.getTextfieldValueFor(tag: tag) ?? ""
+            let key             = model.propertyNames()[tag]
+            cell.textField.text = model.property()[key] as? String ?? ""
             return cell
         }
         //
@@ -267,15 +281,21 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
         let keys   = Array(model.property().keys)
         let selectedKey = keys[tag]
         let selectedValue = model.property()[selectedKey]
+        //print("tag:: \(tag) key:\(selectedKey) -> \(selectedValue)")
         return selectedValue as? String
     }
+    
+//    func getValueFor(key:String) -> String {
+//        //let keys   = Array(model.property().keys)
+//        let selectedValue = model.property()[key]
+//        //print("key:\(key) -> \(selectedValue)")
+//        return selectedValue as? String ?? ""
+//    }
     
     //MARK: Submit Button Pressed
     @objc func submitButtonPressed(){
         print("submitButtonPressed")
-        
         print("\n param:\(model.getParam())")
-        
     }
 }
 
@@ -284,14 +304,20 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
 extension MenuFormViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.getTextFieldsInformation(textField)
+        model.setValueFor(tag: textField.tag, text: textField.text ?? "")
+        self.listTableView.reloadData()
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        return true;
+        return true
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+//        if string == "\n" {
+//         textField.resignFirstResponder()
+//        }
+        
         return true
     }
     
@@ -305,24 +331,4 @@ extension MenuFormViewController: UITextFieldDelegate {
         
         return false
     }
-    
-    func getTextFieldsInformation( _ textField: UITextField) {
-        switch textField.tag {
-        case 2:
-            model.stay_day_count = NSNumber(value: Int(textField.text ?? "") ?? 0)
-        case 3:
-            model.stay_home_name = textField.text!
-        case 4:
-            model.relationship = textField.text!
-        case 5:
-            model.address   = textField.text!
-        case 6:
-            model.phone_number = textField.text!
-        case 7:
-            model.remarks   = textField.text!
-        default:
-            break
-        }
-    }
-    
 }

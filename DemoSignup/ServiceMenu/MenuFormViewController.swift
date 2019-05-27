@@ -16,7 +16,7 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var listTableView: UITableView!
-    let model = ServiceMenuModel.shared
+    let model = ServiceMenuModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,27 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapOutsideTextView))
         listTableView.addGestureRecognizer(tap)
+        
+        /*
+        //demo
+        //UI
+        model.from_date      = "29/05/2019"
+        model.to_date        = "30/05/2019"
+        model.stay_day_count = "2"
+        model.stay_home_name = "Mother's Home"
+        model.relationship   = "Mother"
+        model.address        = "Kurigram"
+        model.phone_number   = "0123546789"
+        model.remarks        = "I will stay there in Eid vacation"
+        
+        //demo
+        model.value8  = "value08"
+        model.value9  = "value09"
+        model.value10 = "value10"
+        model.value11 = "value11"
+        model.value12 = "value12"
+        */
+        
     }
     
     //MARK: - Configure View
@@ -48,7 +69,7 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
         //add detail label
         let detailLabel = UILabel.getLabel()
         detailLabel.frame = CGRect(x: 0, y: 34.scale(), width: SIZE_WIDTH.scale(), height: 24.scale())
-        detailLabel.text = "please_enter_details".localize()
+        detailLabel.text = "詳細をご入力ください "
         detailLabel.textAlignment = .center
         detailLabel.backgroundColor = .clear
         //set text color
@@ -62,7 +83,7 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
         mframe.origin.y = y
         let itemLabel = UILabel.getLabel()
         itemLabel.frame = mframe
-        itemLabel.text = "overnight_accommodation_required_item".localize()
+        itemLabel.text = "※外泊先は必須項目です"
         itemLabel.textAlignment = .center
         itemLabel.alpha = 0.6
         itemLabel.backgroundColor = .clear //UIColor.init(rgbValue: 68) //don't scale
@@ -80,7 +101,7 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
         //add button on footer view
         let submitButton = UIButton()
         submitButton.frame = CGRect(x: 0, y: 0, width: 310.scale(), height: 45.scale())
-        submitButton.setTitle("submit".localize(), for: .normal)
+        submitButton.setTitle("submit", for: .normal)
         submitButton.titleLabel?.font = UIFont.HiraKakuProNW6RegularFont(ofSize: 16.scale())
         submitButton.setTitleColor(UIColor.white, for: .normal)
         submitButton.backgroundColor = UIColor.init(rgbValue: 68)
@@ -103,120 +124,68 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
         self.view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
     }
-    
-    //MARK:- Table Data Surce
-    //section one period data
-    func getPeriodData()->[Any]{
-        return [
-            
-            ["outing_day".localize(), "homestay_day".localize(),"0"],
-            //"outing_day" = "外出日"; "homestay_day" = "帰寮日";
-            ["stay_days".localize(),  "overnight_stay".localize(),"2"],
-            //"stay_days" = "宿泊日数";"overnight_stay" = "一泊二日";
-            
-        ]
-    }
-    
-    //section two detail data
-    func getDetailData()->[Any]{
-        return [
-            //section two
-            ["extra_night_accommodation_mandatory".localize(),"home".localize(),"3"],
-            //["外泊先  (必須)","実家"],
-            ["relation".localize(),"father".localize(),"4"],
-            //["続柄","父"],
-            ["street_address".localize(),"chiyoda_address".localize(),"5"],
-            // ["住所","千代田区外神田 2 - 18 - 8"],
-            ["outside_night_phone_number".localize(),"sample_phone_number".localize(),"6"],
-            //["外泊先電話番号","090 - 0000 - 0000"],
-            ["remarks".localize(),"remarks_value".localize(),"7"],
-            //["備考","お盆のため、実家に帰省します！"],
-        ]
-    }
-    
-    func getHeaderTitleData()->[Any]{
-        let titleArray = ["period".localize(),"outside_hotel_contact_details".localize()]
-        return titleArray
-    }
 
     //MARK: - Table View
     func numberOfSections(in tableView: UITableView) -> Int
     {
-        return  self.getHeaderTitleData().count
+        //return  self.getHeaderTitleData().count
+        return model.getTableData().count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-        var height : CGFloat = 58.scale()
-        if indexPath.section == 1{
-            if indexPath.row == 2 || indexPath.row == 4 {
+        var height : CGFloat = 56.scale()
+        if indexPath.row == 0{//section header height
+            height = model.getHeaderHeight(section: indexPath.section)
+        }else if indexPath.section == 1{
+            if indexPath.row == 3 || indexPath.row == 5 {
                 height = 86.scale()
             }
-            
+        }
+        
+        //add seperator height
+        if indexPath.row > 1{//add seperator for
+            height = height + 2.scale()// seperator height
         }
         return height;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        var row = 0
-        switch section{
-        case 0:
-            row = 2
-        case 1:
-            row = 5
-            
-        default:
-            break
-        }
-        return row
+        let rowArray = model.getTableData()[section] as AnyObject
+        return rowArray.count
     }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 1{
-            return 80.scale()
-        }
-        return 60.scale()
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
-        let headerView = UIView()
-        headerView.frame = CGRect(x: 0, y: 0, width:SIZE_WIDTH , height: section == 0 ? 60.scale():80.scale())
-        headerView.backgroundColor = UIColor.init(rgbValue: 242)
-        
-        //
-        var mframe = headerView.frame
-        mframe.origin.x    = 16
-        mframe.size.width = mframe.size.width - 2*mframe.origin.x
-        
-        mframe.size.height = 20
-        mframe.origin.y    = headerView.frame.size.height - mframe.size.height - 10
-        
-        
-        let textLabel : UILabel = UILabel.getLabel()
-        textLabel.frame = mframe
-        textLabel.font = UIFont.NotoSansCJKJPRegularFont(ofSize: 14.scale())
-        textLabel.backgroundColor = .clear //UIColor.init(rgbValue: 68)
-        textLabel.text = self.getHeaderTitleData()[section] as? String ?? ""
-        textLabel.textColor = UIColor.init(rgbValue: 68)
-        
-        headerView.addSubview(textLabel)
-        return headerView
-    }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.section == 0 &&  indexPath.row == 0{
+        let sectionData = model.getTableData()[indexPath.section] as! [[String]]
+        let rowData     = sectionData[indexPath.row]
+        
+        //set first row for  each header  as a section header
+        if indexPath.row == 0 {
+            guard let cell: HeaderCell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as? HeaderCell  else {
+                fatalError("The dequeued cell is not an instance of HeaderCell.")
+            }
+            
+            //title frame
+            var mframe = cell.titleLabel.frame
+            mframe.origin.y    =  model.getHeaderHeight(section: indexPath.section) - mframe.size.height - 10
+            cell.titleLabel.frame = mframe
+            cell.titleLabel.text   = rowData[0]
+            
+            return cell
+            
+        }else if indexPath.section == 0 &&  indexPath.row == 1{
             
                 guard let cell:ServiceMenuDateCell = tableView.dequeueReusableCell(withIdentifier: "ServiceMenuDateCell", for: indexPath) as? ServiceMenuDateCell  else {
                     fatalError("The dequeued cell is not an instance of ServiceMenuDateCell.")
                 }
             
-                cell.cellSeperator.isHidden = indexPath.row == 0 ? true:false
+                cell.cellSeperator.isHidden = indexPath.row == 1 ? true:false
             
-                let titleList:[String] = self.getPeriodData()[indexPath.row] as! [String]
+                let titleList:[String] = model.getSection0Data()[indexPath.row] as! [String]
                 cell.titleButtonLeft.setTitle(titleList[0], for: .normal)
-                cell.dateButtonLeft.setTitle("august9".localize(), for: .normal)
+                cell.dateButtonLeft.setTitle("august9", for: .normal)
                 cell.titleButtonRight.setTitle(titleList[1], for: .normal)
-                cell.dateButtonRight.setTitle("august11".localize(), for: .normal)
+                cell.dateButtonRight.setTitle("august11", for: .normal)
             
                 return cell
             
@@ -224,21 +193,18 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
             guard let cell:ServiceMenuDetailCell = tableView.dequeueReusableCell(withIdentifier: "ServiceMenuDetailCell", for: indexPath) as? ServiceMenuDetailCell  else {
                 fatalError("The dequeued cell is not an instance of ServiceMenuDetailCell.")
             }
+
+            let sectionData = model.getTableData()[indexPath.section] as! [[String]]
+            let rowData     = sectionData[indexPath.row]
             
-            var titleList:[String] =  self.getDetailData()[indexPath.row] as! [String]
-            if indexPath.section == 0{
-                 titleList =  self.getPeriodData()[indexPath.row] as! [String]
-            }
+            let tag =  Int(rowData[2]) ?? 0
+            cell.titleLabel.text    =  rowData[0]
+            cell.textField.tag       =  tag
+            cell.textField.delegate   = self
+            cell.textField.placeholder = rowData[1]
             
-            let tag =  Int(titleList[2]) ?? 0
-            cell.textField.delegate = self
-            cell.titleLabel.text =  titleList[0]
-            
-            cell.textField.tag =  tag
-            cell.textField.placeholder = titleList[1]
-            
-            //set value of the textfiled
-            cell.textField.text = self.getTextfieldValueFor(tag: tag) ?? ""
+            let key             = model.propertyNames()[tag]
+            cell.textField.text = model.property()[key] as? String ?? ""
             return cell
         }
         //
@@ -260,19 +226,10 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
  */
     }
     
-    func getTextfieldValueFor(tag:Int) -> String? {
-        let keys   = Array(model.property().keys)
-        let selectedKey = keys[tag]
-        let selectedValue = model.property()[selectedKey]
-        return selectedValue as? String
-    }
-    
     //MARK: Submit Button Pressed
     @objc func submitButtonPressed(){
         print("submitButtonPressed")
-        
         print("\n param:\(model.getParam())")
-        
     }
 }
 
@@ -281,14 +238,20 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
 extension MenuFormViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.getTextFieldsInformation(textField)
+        model.setValueFor(tag: textField.tag, text: textField.text ?? "")
+        self.listTableView.reloadData()
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        return true;
+        return true
     }
-    
+
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+//        if string == "\n" {
+//         textField.resignFirstResponder()
+//        }
+        
         return true
     }
     
@@ -302,28 +265,4 @@ extension MenuFormViewController: UITextFieldDelegate {
         
         return false
     }
-    
-//    @objc func textFieldDidChange(_ textField: UITextField) {
-//        self.getTextFieldsInformation(textField)
-//    }
-    
-    func getTextFieldsInformation( _ textField: UITextField) {
-        switch textField.tag {
-        case 2:
-            model.stay_day_count = NSNumber(value: Int(textField.text ?? "") ?? 0)
-        case 3:
-            model.stay_home_name = textField.text!
-        case 4:
-            model.relationship = textField.text!
-        case 5:
-            model.address   = textField.text!
-        case 6:
-            model.phone_number = textField.text!
-        case 7:
-            model.remarks   = textField.text!
-        default:
-            break
-        }
-    }
-    
 }

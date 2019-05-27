@@ -124,57 +124,6 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
         self.view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
     }
-    
-//    //MARK:- Table Data Surce Private method
-//    //section first period data
-//    func getSection0Data()->[Any]{
-//        return [
-//            ["期間","80"],//header row
-//            ["外出日", "帰寮日","0"],
-//            //"outing_day" = "外出日"; "homestay_day" = "帰寮日";
-//            ["宿泊日数",  "一泊二日","2"],
-//            //"stay_days" = "宿泊日数";"overnight_stay" = "一泊二日";
-//        ]
-//    }
-//    
-//    //section second detail data
-//    func getSection1Data()->[Any]{
-//        return [
-//            ["外泊先(連絡先)","80"],//header row
-//            ["外泊先  (必須)","実家","3"],
-//            //["外泊先  (必須)","実家"],
-//            ["続柄","父","4"],
-//            //["続柄","父"],
-//            ["住所","千代田区外神田 2 - 18 - 8","5"],
-//            // ["住所","千代田区外神田 2 - 18 - 8"],
-//            ["外泊先電話番号","090 - 0000 - 0000","6"],
-//            //["外泊先電話番号","090 - 0000 - 0000"],
-//            ["備考","お盆のため、実家に帰省します！","7"],
-//            //["備考","お盆のため、実家に帰省します！"],
-//            
-//            //duplicate data
-//            ["Value 8","実家","8"],
-//            ["Value 9","父","9"],
-//            ["Value 10","千代田区外神田 2 - 18 - 8","10"],
-//            ["Value 11","090 - 0000 - 0000","11"],
-//            ["Value 12","お盆のため、実家に帰省します！","12"],
-//        ]
-//    }
-//    
-//    // all section data
-//    func getTableData()->[Any]{
-//        return [
-//            self.getSection0Data(),
-//            self.getSection1Data(),
-//        ]
-//    }
-//    
-//    func getHeaderHeight(section:Int) -> CGFloat{
-//        let sectionData = getTableData()[section] as! [[String]]
-//        let rowData     = sectionData[0]
-//        let height      = Double(rowData[1]) ?? 0
-//        return CGFloat(height)
-//    }
 
     //MARK: - Table View
     func numberOfSections(in tableView: UITableView) -> Int
@@ -276,21 +225,6 @@ class MenuFormViewController:UIViewController,UITableViewDataSource,UITableViewD
         print("selectedValue:\(selectedValue)")
  */
     }
-    
-    func getTextfieldValueFor(tag:Int) -> String? {
-        let keys   = Array(model.property().keys)
-        let selectedKey = keys[tag]
-        let selectedValue = model.property()[selectedKey]
-        //print("tag:: \(tag) key:\(selectedKey) -> \(selectedValue)")
-        return selectedValue as? String
-    }
-    
-//    func getValueFor(key:String) -> String {
-//        //let keys   = Array(model.property().keys)
-//        let selectedValue = model.property()[key]
-//        //print("key:\(key) -> \(selectedValue)")
-//        return selectedValue as? String ?? ""
-//    }
     
     //MARK: Submit Button Pressed
     @objc func submitButtonPressed(){

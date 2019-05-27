@@ -12,15 +12,14 @@ import UIKit
 protocol Property {
     func property() -> [String:Any]
     func propertyNames() -> [String]
-//    func propertyValues() -> [Any]
 }
 
 extension Property
 {
     func property() -> [String:Any] {
-      let keys   = Mirror(reflecting: self).children.compactMap { $0.label }
-      let values = Mirror(reflecting: self).children.compactMap { $0.value }
-      
+        let keys   = Mirror(reflecting: self).children.compactMap { $0.label }
+        let values = Mirror(reflecting: self).children.compactMap { $0.value }
+        
         var propertyDic = [String:Any]()
         var index = 0
         for key in keys {
@@ -34,116 +33,50 @@ extension Property
     func propertyNames() -> [String] {
         return Mirror(reflecting: self).children.map{ $0.label! }
     }
-//
-//    func propertyValues() -> [Any] {
-//        return Mirror(reflecting: self).children.compactMap { $0.value }
-//    }
-    
 }
 
-class ServiceMenuModel:Property {
+class ServiceMenuModel:NSObject,Property {
     //private init() { }
     //public static let shared = ServiceMenuModel()
     
     //UI
-    var from_date: String?
-    var to_date: String?
-    var stay_day_count: String?
-    var stay_home_name: String?
-    var relationship: String?
-    var address: String?
-    var phone_number: String?
-    var remarks: String?
+    @objc dynamic var from_date: String?
+    @objc dynamic var to_date: String?
+    @objc dynamic var stay_day_count: String?
+    @objc dynamic var stay_home_name: String?
+    @objc dynamic var relationship: String?
+    @objc dynamic var address: String?
+    @objc dynamic var phone_number: String?
+    @objc dynamic var remarks: String?
     //demo
-    var value8: String?
-    var value9: String?
-    var value10: String?
-    var value11: String?
-    var value12: String?
+    @objc dynamic var value8: String?
+    @objc dynamic var value9: String?
+    @objc dynamic var value10: String?
+    @objc dynamic var value11: String?
+    @objc dynamic var value12: String?
     
     //get parameter
     func getParam() -> [String:Any] {
-        
-        let param: [String:Any] = [
-            "from_date"      :  self.from_date ?? "",
-            "to_date"        :  self.to_date ?? "",
-            "stay_day_count" :  self.stay_day_count ?? "",
-            "stay_home_name" :  self.stay_home_name ?? "",
-            
-            "relationship"   :  self.relationship ?? "",
-            "address"        :  self.address ?? "",
-            "phone_number"   :  self.phone_number ?? "",
-            "remarks"        :  self.remarks ?? "",
-            //demo
-        "value8"         :  self.value8 ?? "",
-        "value9"         :  self.value9 ?? "",
-        "value10"        :  self.value10 ?? "",
-        "value11"        :  self.value11 ?? "",
-        "value12"        :  self.value12 ?? "",
-        
-            ]
+        var param = [String:Any]()
+        let propertyList = Mirror(reflecting: self).children.map {$0}
+        //enumerate properties
+        for child in propertyList.enumerated(){
+            let key   = child.element.label
+            let value = child.element.value as? String ?? ""
+            if let _key = key {
+                param[_key] = value
+            }
+        }
         return param
     }
     
     func setValueFor(tag:Int, text:String) {
-        
-        //self.property()[self.allValues[tag]] = text
-//        Mirror(reflecting: self).children.map{(dict) -> [String : Any] in
-//            dict["stay_day_count"] = 1020
-//        }
-        
-        /*
         var propertyList = Mirror(reflecting: self).children.map { $0}
         let key = propertyList[tag].label
-        
-        print("propertyList\n:\(propertyList)")
-        print("result:\(String(describing: key))")
-        
-        for index in 0..<propertyList.count {
-            let label = propertyList[index].label
-            if let _label = label,_label == key {
-                propertyList[index].value = text // copied by value
-            }
-        }
-        
-        for prty in Mirror(reflecting: self).children {
-            var test = prty
-            print("prty:\(prty)")
-        }
-        print("upadte propertyList::\n \(propertyList)")
-        
-        */
-        
-        return
-        
-        switch tag {
-        case 2:
-            self.stay_day_count = text
-        case 3:
-            self.stay_home_name = text
-        case 4:
-            self.relationship = text
-        case 5:
-            self.address   = text
-        case 6:
-            self.phone_number = text
-        case 7:
-            self.remarks   = text
-        case 8:
-            self.value8   = text
-        case 9:
-            self.value9   = text
-        case 10:
-            self.value10   = text
-        case 11:
-            self.value11   = text
-        case 12:
-            self.value12   = text
-        default:
-            break
+        if let _key = key {
+            self.setValue(text , forKey: _key)
         }
     }
-    
     
     //MARK:- Table Data Surce Private method
     //section first period data
@@ -195,11 +128,9 @@ class ServiceMenuModel:Property {
         let height      = Double(rowData[1]) ?? 0
         return CGFloat(height)
     }
-    
-    
 }
 
-class ServiceMenuModelResponse:Property {
+class ServiceMenuModelResponse:NSObject {
     //Api response
     var data: String?
     var success: Bool?

@@ -30,7 +30,6 @@
 		8D649EC822913E4F005AA9F9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D649ECA22913E4F005AA9F9 /* Localizable.strings */; };
 		8D649ECD229140A2005AA9F9 /* MenuFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D649ECC229140A2005AA9F9 /* MenuFormViewController.swift */; };
 		8D649ED1229142ED005AA9F9 /* ServiceMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D649ED0229142ED005AA9F9 /* ServiceMenuModel.swift */; };
-		8D91E2B62FA78D8400DC98F4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D649E6F229121EA005AA9F9 /* Info.plist */; };
 		8DA420EA2296ADA0005C1DB2 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA420E92296ADA0005C1DB2 /* HeaderCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -238,7 +237,6 @@
 				8D649EAD2291315E005AA9F9 /* yugothib.ttf in Resources */,
 				8D649EA92291315E005AA9F9 /* hirakakupro-w6.otf in Resources */,
 				8D649EAE2291315E005AA9F9 /* yugothim.otf in Resources */,
-				8D91E2B62FA78D8400DC98F4 /* Info.plist in Resources */,
 				8D649EC822913E4F005AA9F9 /* Localizable.strings in Resources */,
 				8D649EAC2291315E005AA9F9 /* NotoSansCJKjp-Regular.otf in Resources */,
 			);
